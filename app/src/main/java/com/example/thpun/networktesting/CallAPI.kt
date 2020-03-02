@@ -12,7 +12,7 @@ import java.util.*
 class CallAPI() : AsyncTask<String, String, String>() {
 
     override fun doInBackground(vararg params: String?): String {
-        val url = URL("")
+        val url = URL("https://v5sf8pb1e0.execute-api.us-east-2.amazonaws.com/test2")
         val conn = url.openConnection() as HttpURLConnection
 
         try {
@@ -25,7 +25,7 @@ class CallAPI() : AsyncTask<String, String, String>() {
 
             val jsonParam = JSONObject()
             val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.UK)
-            jsonParam.put("name", "background")
+            jsonParam.put("name", "foreground")
             jsonParam.put("time", sdf.format(Calendar.getInstance().time))
 
             Log.i("JSON", jsonParam.toString())
